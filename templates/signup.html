@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+{% block head%} {{ super() }}
+
+{% endblock head%}
+{% block navbar %} {{ super() }} {% endblock navbar %}
+
+{% block content %}
+     <div class="jumbotron">
+          <h1 class="display-4">Join Us</h1>
+          <p class="lead">We would love nothing more than to expand our enterprise, for the benefit of ourselves and the world.</p>
+          <hr class="my-4">
+          <p>Sign up for our mailing list below for news, updates and business opportunities. For those wishing to partner with us,
+             more information will be provided in your welcome email.
+          </p>
+    </div>
+
+    <form id="signup-form" method="post" action="/JoinUs" role="form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+{% endblock content %}
+
+{% block footer %} {{ super() }} {% endblock footer %}

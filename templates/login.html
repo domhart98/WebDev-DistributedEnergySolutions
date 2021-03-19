@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+{% block head%} {{ super() }}
+{% endblock head%}
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+    {{ message }}<br/>
+{% endfor %}
+<form  action="/Login" method="post" style="background-image: url('/static/images/gradient.jpg');">
+    <div class="container" >
+        <div class="row justify-content-center align-items-center" style="height: 100vh;">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body center-block">
+                        <form class="col-md-4 " action="/Login" method="post">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                                {% for message in get_flashed_messages() %}
+                                    {{ message }}<br/>
+                                {% endfor %}
+                                <div class="form-group ">
+                                    {{ form.username.label }} {{ form.username }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form.password.label }} {{ form.password }}
+                                </div>
+                            <input type="submit" id="sendlogin" class="btn btn-success center-block" value="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+{% endblock content %}
+
+{% block footer %} {{ super() }} {% endblock footer %}

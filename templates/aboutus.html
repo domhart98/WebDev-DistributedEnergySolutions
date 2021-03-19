@@ -1,0 +1,104 @@
+{% extends "home.html" %}
+{% block head%} {{ super() }}
+
+{% endblock head%}
+{% block navbar %} {{ super() }} {% endblock navbar %}
+
+{% block content %}
+    <div class="jumbotron">
+          {% if username %}
+          <h1 class="display-4">About Us<button type="button" class="btn btn-default btn-outline-primary btn-sm pull-right">
+                                                      <a href="/Logout" > Log out </a>
+                                                 </button>
+          </h1>
+           {% else %}
+            <h1 class="display-4">About Us<button type="button" class="btn btn-default btn-outline-primary btn-sm pull-right">
+                                                      <a href="/Login" > Log in </a>
+                                                 </button>
+            </h1>
+            {% endif %}
+          <p class="lead">This endeavor started as a mere two person passion project, as recently as 2017. Over this short period of operation we have devoloped our products
+                            and expanded our operations tenfold. This is a testament to the strength and relevance of our concept in today's consumption driven society.
+                            Our headquarters are located in sunny Barbados where our research and development team can take advantage of climate, and with projects underway on
+                            5 continents, this is only the beginning.</p>
+          <hr class="my-4">
+          <p>Below you can see the talented individuals that enable us to do the work that we do, with enthusiasm:</p>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" >
+                <div class="card">
+                  <img src="/static/images/person7.jpg" class="card-img-top" alt="headshot of employee">
+                  <div class="card-body">
+                    <h5 class="card-title">Jane Johnson</h5>
+                    <h6 class="card-subtitle">Cheif Executive Officer</h6>
+                    <hr>
+                    <p class="card-text">Bio of employee showing their credentials, postion in and contribution to the company</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6" >
+                <div class="card">
+                  <img src="/static/images/person4.jpg" class="card-img-top" alt="headshot of employee">
+                  <div class="card-body">
+                    <h5 class="card-title">Randy James</h5>
+                    <h6 class="card-subtitle">Executive Manager</h6>
+                      <hr>
+                    <p class="card-text">Bio of employee showing their credentials, postion in and contribution to the company</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" >
+                <div class="card">
+                  <img src="/static/images/person1.jpg" class="card-img-top" alt="headshot of employee">
+                  <div class="card-body">
+                    <h5 class="card-title">Alex Williams</h5>
+                    <h6 class="card-subtitle">Regional Manager</h6>
+                      <hr>
+                    <p class="card-text">Bio of employee showing their credentials, postion in and contribution to the company</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6" >
+                <div class="card">
+                  <img src="/static/images/person8.jpg" class="card-img-top" alt="headshot of employee">
+                  <div class="card-body">
+                    <h5 class="card-title">Alison Armstrong</h5>
+                    <h6 class="card-subtitle">Multimedia and Marketing Manager</h6>
+                      <hr>
+                    <p class="card-text">Bio of employee showing their credentials, postion in and contribution to the company</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" >
+                <div class="card">
+                  <img src="/static/images/person5.jpg" class="card-img-top" alt="headshot of employee">
+                  <div class="card-body">
+                    <h5 class="card-title">Robert Snowden</h5>
+                    <h6 class="card-subtitle">Research and Development Director </h6>
+                      <hr>
+                    <p class="card-text">Bio of employee showing their credentials, postion in and contribution to the company</p>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6" >
+                <div class="card">
+                  <img src="/static/images/person3.jpg" class="card-img-top" alt="headshot of employee">
+                  <div class="card-body">
+                    <h5 class="card-title">Jen Selter</h5>
+                    <h6 class="card-subtitle">Sales Executive</h6>
+                      <hr>
+                    <p class="card-text">Bio of employee showing their credentials, postion in and contribution to the company</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %} {{ super() }} {% endblock footer %}

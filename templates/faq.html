@@ -1,0 +1,45 @@
+{% extends "home.html" %}
+{% block head%} {{ super() }}
+
+{% endblock head%}
+{% block navbar %} {{ super() }} {% endblock navbar %}
+
+{% block content %}
+
+
+{% if username %}
+         <br> <br> <br> <button type="button" class="btn btn-default btn-outline-primary btn-sm pull-right" style="margin-right:50px;"><a href="/Logout" > Log out </a></button>
+{% else %}
+         <br> <br> <br> <button type="button" class="btn btn-default btn-outline-primary btn-sm pull-right" style="margin-right:50px;"><a href="/Login" > Log in </a></button>
+{% endif %}
+
+<div class="container py-3" id="faq">
+    <div class="row">
+        <div class="col-12 mx-auto">
+            <div class="accordion" >
+                {% for faq in faq_list %}
+                    <div class="card-faq">
+                        <div class="card-header p-2" id="heading{{faq[0]}}">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{faq[0]}}" aria-expanded="false" aria-controls="collapse{{faq[0]}}">
+                                  Q: {{faq[1]}}
+                                </button>
+                              </h5>
+                        </div>
+                        <div id="collapse{{faq[0]}}" class="collapse" aria-labelledby="heading{{faq[0]}}" data-parent="#faq">
+                            <div class="card-body">
+                               A: {{faq[2]}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %} {{ super() }} {% endblock footer %}
+

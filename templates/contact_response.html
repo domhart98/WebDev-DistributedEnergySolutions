@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+{% block head%} {{ super() }}
+{% endblock head%}
+{% block content %}
+    <div class="jumbotron card card-image" style="background-image: url('/static/images/gradient.jpg'); height: 500px; ">
+        <div class="text-white text-center py-5 px-4">
+            <div>
+              <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Thank you very much, {{fname}} {{lastname}}</strong></h2>
+              <p class="mx-5 mb-5">Your message has been received.<br>
+                  We will contact you shortly with a response at: {{email}}<br>
+                  Message: "{{message}}"
+              </p>
+              <a href="/" class="btn text-white btn-outline-light btn-md"> Return to home page</a>
+               <a href="/Contact" class="btn text-white btn-outline-light btn-md"> Send another message</a>
+            </div>
+         </div>
+    </div>
+{% endblock content %}
+
+{% block footer %} {{ super() }} {% endblock footer %}
